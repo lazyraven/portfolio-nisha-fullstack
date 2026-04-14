@@ -1,0 +1,120 @@
+
+https://chatgpt.com/share/69de38d1-63fc-83e8-8866-0954d743dc00
+
+1. Master Prompt (Best Starting Point)
+First Prompt :
+Create a modern, responsive portfolio web application using React (Vite) and Tailwind CSS.
+
+Design style:
+- Clean, minimal, professional UI
+- Soft color palette (white, gray, with subtle accent like purple or blue)
+- Smooth animations and transitions
+- Glassmorphism and card-based layout
+- Fully responsive (mobile-first)
+
+Sections to include:
+1. Hero Section
+   - Name: Nisha Yadav
+   - Title: Full Stack Developer
+   - Short tagline about building scalable web apps
+   - CTA buttons: "View Projects", "Contact Me"
+
+2. About Me
+   - 5+ years experience summary
+   - Focus on React, Node.js, MongoDB
+   - Passion for building scalable and performant apps
+
+3. Skills Section
+   - Frontend: React, Vue, Angular, JavaScript
+   - Backend: Node.js, Express, MongoDB
+   - Tools: Jenkins, Azure DevOps, Git
+   - Show skills with icons and progress bars
+
+4. Experience Timeline
+   - Genpact (2022–Present)
+   - R Systems International (2020–2022)
+   - Timeline UI with cards
+
+5. Projects Section
+   - Open Retro (highlight project)
+   - Just Vegan
+   - MERN Auth
+   - Show project cards with:
+     - Title
+     - Description
+     - Tech stack
+     - GitHub + Live links
+
+6. Contact Section
+   - Email, phone, LinkedIn
+   - Contact form UI
+
+7. Footer
+   - Minimal with social links
+
+Extra features:
+- Dark/Light mode toggle
+- Smooth scroll navigation
+- Hover animations
+- Sticky navbar
+
+Tech requirements:
+- React + Vite
+- Tailwind CSS
+- Component-based structure
+
+2. Advanced UI Prompt (For Premium Design ✨)
+Second Prompt :
+Design a premium developer portfolio UI for a senior full stack developer.
+
+UI style:
+- Modern SaaS-inspired layout
+- Glassmorphism + subtle gradients
+- Animated background (blur blobs or grid)
+- Micro-interactions on hover
+- Smooth page transitions (Framer Motion)
+
+Key design elements:
+- Floating navbar with blur effect
+- Hero section with gradient text and animated typing effect
+- Card-based sections with shadow and hover lift
+- Timeline with vertical progress indicator
+- Project cards with image preview and hover overlay
+- Skill badges with icons and glow effect
+
+Typography:
+- Bold headings, clean sans-serif font
+- Proper spacing and hierarchy
+
+Color palette:
+- Dark mode default
+- Primary: Indigo / Purple gradient
+- Accent: Cyan / Pink highlights
+
+Make it look like a top-tier developer portfolio (inspired by modern SaaS landing pages).
+
+3. Component-Level Prompts (Very Useful)
+Third Prompt:
+
+👉 Hero Section
+Create a modern hero section for a portfolio with:
+- Name: Nisha Yadav
+- Title: Full Stack Developer
+- Animated typing effect
+- CTA buttons
+- Gradient text
+- Background blur animation
+
+👉 Project Cards
+Create reusable project card components using React and Tailwind with:
+- Image preview
+- Title and description
+- Tech stack badges
+- GitHub and Live buttons
+- Hover animation with scale and shadow
+
+👉 Experience Timeline
+Create a vertical timeline UI using React and Tailwind:
+- Company name, role, duration
+- Expandable details
+- Animated scroll reveal

@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 10%, rgba(96, 165, 250, 0.18), transparent 18%),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.16), transparent 20%),
+    linear-gradient(180deg, #020617 0%, #070b16 100%);
+}
+
+section {
+  @apply relative py-24;
+}
+
+.floating-panel {
+  @apply rounded-[2rem] border border-white/10 shadow-[0_40px_120px_-40px_rgba(15,23,42,0.8)] backdrop-blur-2xl;
+  background-color: rgba(15, 23, 42, 0.72);
+}
+
+.card-glass {
+  @apply rounded-[2rem] border border-white/10 shadow-[0_28px_80px_-24px_rgba(15,23,42,0.65)] backdrop-blur-2xl transition-transform duration-300;
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+.card-glass:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 px-6 py-3 text-sm font-semibold text-white shadow-xl shadow-indigo-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-indigo-500/30 focus:outline-none focus:ring-2 focus:ring-cyan-300;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-100/90 transition duration-300 hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20;
+  background-color: rgba(15, 23, 42, 0.7);
+}
+
+.glow-badge {
+  @apply inline-flex items-center rounded-full border border-white/10 px-3 py-2 text-sm font-semibold text-slate-100 shadow-[0_0_18px_rgba(99,102,241,0.15)] transition duration-300;
+  background-color: rgba(15, 23, 42, 0.75);
+}
+
+.timeline-line {
+  position: absolute;
+  left: 2rem;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(56, 189, 248, 0.85), rgba(236, 72, 153, 0.2));
+}
+
+.timeline-point {
+  position: absolute;
+  left: 1.375rem;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #818cf8, #06b6d4);
+  border: 2px solid rgba(15, 23, 42, 0.85);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+}
+
+.project-preview {
+  @apply relative overflow-hidden rounded-[1.75rem] p-6 shadow-2xl shadow-slate-950/40;
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+.project-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.15), transparent 30%);
+  pointer-events: none;
+}
+
+.project-card:hover .overlay-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-panel {
+  @apply absolute inset-x-6 bottom-6 rounded-[1.5rem] p-5 opacity-0 text-slate-100 transition duration-300;
+  background-color: rgba(15, 23, 42, 0.9);
+  transform: translateY(24px);
+}
+
+.hero-typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
+  animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+  width: 0;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 16rem; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.animated-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.68;
+  animation: blob 10s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -40px) scale(1.05); }
+  66% { transform: translate(-30px, 20px) scale(0.92); }
+}
