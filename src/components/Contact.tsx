@@ -124,7 +124,7 @@ export default function Contact() {
             </label>
             <button
               type="submit"
-              className="mt-4 inline-flex w-full items-center justify-center rounded-[1.5rem] bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
+              className="btn-primary mt-4 inline-flex w-full items-center justify-center rounded-[1.5rem] px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
             >
               Send Message
             </button>
