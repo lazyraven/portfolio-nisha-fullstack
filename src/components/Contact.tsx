@@ -1,4 +1,44 @@
+import { useEffect, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+type Toast = {
+  type: "success" | "error";
+  text: string;
+};
+
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [toast, setToast] = useState<Toast | null>(null);
+
+  useEffect(() => {
+    if (!toast) return;
+
+    const timeout = window.setTimeout(() => {
+      setToast(null);
+    }, 4000);
+
+    return () => window.clearTimeout(timeout);
+  }, [toast]);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!formRef.current) return;
+
+    try {
+      await emailjs.sendForm(
+        "service_yiqnzlc",
+        "template_goy78wv",
+        formRef.current,
+        "9PXE7kH6KkoaQuyJJ"
+      );
+      setToast({ type: "success", text: "Thank you for your message! I will get back to you soon." });
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS send error:", error);
+      setToast({ type: "error", text: "Unable to send message right now. Please try again later." });
+    }
+  };
+
   return (
     <section id="contact">
       <div className="mx-auto max-w-6xl">
@@ -16,7 +56,7 @@ export default function Contact() {
             </div>
             <div className="space-y-4 text-slate-300">
               <p>
-                Email: <span className="font-semibold text-white">nisha@example.com</span>
+                Email: <span className="font-semibold text-white">nishayadav1703@gmail.com</span>
               </p>
               <p>
                 Phone: <span className="font-semibold text-white">+1 (555) 123-4567</span>
@@ -39,18 +79,37 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <form className="card-glass space-y-6 p-8">
+          <form ref={formRef} onSubmit={handleSubmit} className="card-glass space-y-6 p-8">
+            <input type="hidden" name="name" value="Nisha" />
             <label className="block">
               <span className="text-sm font-semibold text-slate-200">Name</span>
-              <input type="text" placeholder="Your name" className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20" />
+              <input
+                name="from_name"
+                type="text"
+                placeholder="Your name"
+                className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20"
+                required
+              />
             </label>
             <label className="block">
               <span className="text-sm font-semibold text-slate-200">Email</span>
-              <input type="email" placeholder="you@example.com" className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20" />
+              <input
+                name="from_email"
+                type="email"
+                placeholder="you@example.com"
+                className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20"
+                required
+              />
             </label>
             <label className="block">
               <span className="text-sm font-semibold text-slate-200">Message</span>
-              <textarea placeholder="Tell me about your project" rows={5} className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20" />
+              <textarea
+                name="from_message"
+                placeholder="Tell me about your project"
+                rows={5}
+                className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20"
+                required
+              />
             </label>
             <button type="submit" className="btn-primary w-full">
               Send Message
@@ -58,6 +117,22 @@ export default function Contact() {
           </form>
         </div>
       </div>
+      {toast && (
+        <div
+          aria-live="polite"
+          className="fixed bottom-6 right-6 z-50 max-w-xs rounded-2xl px-4 py-3 text-sm font-medium shadow-xl"
+        >
+          <div
+            className={`rounded-2xl px-4 py-3 text-white shadow-lg ${
+              toast.type === "success"
+                ? "bg-emerald-500/95"
+                : "bg-rose-500/95"
+            }`}
+          >
+            {toast.text}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
