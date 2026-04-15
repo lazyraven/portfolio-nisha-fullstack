@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,11 +10,25 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    if (typeof window === 'undefined') {
+      return true;
+    }
+
+    const savedTheme = window.localStorage.getItem('theme');
+    if (savedTheme === 'dark') return true;
+    if (savedTheme === 'light') return false;
+
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? true;
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+    window.localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <div className="app-shell relative min-h-screen overflow-hidden bg-slate-50 text-slate-950 transition-colors duration-500 dark:bg-slate-950 dark:text-slate-100">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="animated-blob bg-indigo-500/20 top-8 left-6 h-72 w-72"></div>
           <div className="animated-blob bg-cyan-400/20 bottom-12 right-10 h-80 w-80"></div>
@@ -32,7 +46,6 @@ function App() {
           </motion.div>
         </main>
         <Footer />
-      </div>
     </div>
   );
 }

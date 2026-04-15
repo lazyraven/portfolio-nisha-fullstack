@@ -118,3 +118,51 @@ Create a vertical timeline UI using React and Tailwind:
 - Company name, role, duration
 - Expandable details
 - Animated scroll reveal
+
+New Toipic Email Integration For Contact Tab Send Message.
+Integrate with free
+
+Prompt : When someone submit the contact details, I need to receive the details in my gmail account. suggest some free tools ?
+
+https://www.youtube.com/watch?v=jefp7vkPnuE&t=116s > How to Build Your Own Portfolio Website in Minutes with AI ! > 
+Website Learners YTube Channal
+
+Setup steps on EmailJs website 
+To integrate emailjs with our website > https://www.emailjs.com/
+
+Step 1: Create an account on EmailJS website > Create Free Account > SignUp
+
+Step 2: Create Email Service  
+         Email Service > Add New Service > Google select > Continue > send email on your behalf checkbox-checked >  continue > create service
+
+Step 3: Create Email Template
+        Like This : 	
+            Hello {{name}},
+
+            You got a new message from {{from_name}}:
+
+            {{from_email}}
+
+            {{from_message}}
+
+            Portfolio Site
+Save the template with click on save..
+https://dashboard.emailjs.com/admin
+
+Write This Prompt on Copilot 
+Prompt : 4 on Copilot
+for portfolio-react-vite..
+when someone submit the contact details, I need to receive the details in my gmail account. suggest some free tools ?
+to integrate emailjs with our website.
+
+npm install @emailjs/browser
+
+Update the code with these key which is receive from EmailJS application..
+
+Account > Public Key > 9PXE7kH----uyJJ
+Email Template > Template ID > templa_hhjjy78wv
+Email Service > Click on Google > Service ID > service_yiqnzlc
+
+After save the toast msg implement i good UI form, with some small transition
+
+The EmailJS configuration is done..

@@ -7,7 +7,7 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Projects</p>
-          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl dark:text-white">
             Showcasing premium web product work.
           </h2>
         </div>
