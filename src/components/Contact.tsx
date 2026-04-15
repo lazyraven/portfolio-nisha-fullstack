@@ -79,15 +79,26 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <form ref={formRef} onSubmit={handleSubmit} className="card-glass space-y-6 p-8">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="rounded-[2rem] border border-cyan-300/10 bg-slate-950/90 p-8 shadow-[0_40px_120px_-45px_rgba(14,165,233,0.35)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1"
+          >
             <input type="hidden" name="name" value="Nisha" />
+            <div className="mb-6 space-y-2">
+              <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Message</p>
+              <h3 className="text-2xl font-semibold text-white">Send me a note</h3>
+              <p className="text-sm text-slate-400">
+                Share your project details and I’ll respond as soon as possible.
+              </p>
+            </div>
             <label className="block">
               <span className="text-sm font-semibold text-slate-200">Name</span>
               <input
                 name="from_name"
                 type="text"
                 placeholder="Your name"
-                className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20"
+                className="mt-3 w-full rounded-[1.5rem] border border-slate-700 bg-slate-900/90 px-4 py-3 text-slate-100 outline-none transition duration-300 ease-out hover:border-cyan-300/70 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20 placeholder:text-slate-500"
                 required
               />
             </label>
@@ -97,7 +108,7 @@ export default function Contact() {
                 name="from_email"
                 type="email"
                 placeholder="you@example.com"
-                className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20"
+                className="mt-3 w-full rounded-[1.5rem] border border-slate-700 bg-slate-900/90 px-4 py-3 text-slate-100 outline-none transition duration-300 ease-out hover:border-cyan-300/70 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20 placeholder:text-slate-500"
                 required
               />
             </label>
@@ -107,11 +118,14 @@ export default function Contact() {
                 name="from_message"
                 placeholder="Tell me about your project"
                 rows={5}
-                className="mt-3 w-full rounded-[1.5rem] border border-white/10 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20"
+                className="mt-3 w-full rounded-[1.5rem] border border-slate-700 bg-slate-900/90 px-4 py-3 text-slate-100 outline-none transition duration-300 ease-out hover:border-cyan-300/70 focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20 placeholder:text-slate-500"
                 required
               />
             </label>
-            <button type="submit" className="btn-primary w-full">
+            <button
+              type="submit"
+              className="mt-4 inline-flex w-full items-center justify-center rounded-[1.5rem] bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition duration-300 ease-out hover:-translate-y-0.5 hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300/40"
+            >
               Send Message
             </button>
           </form>
