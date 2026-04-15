@@ -28,7 +28,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="app-shell relative min-h-screen overflow-hidden bg-slate-50 text-slate-950 transition-colors duration-500 dark:bg-slate-950 dark:text-slate-100">
+    <div className="app-shell relative min-h-screen overflow-visible bg-slate-50 text-slate-950 transition-colors duration-500 dark:bg-slate-950 dark:text-slate-100">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="animated-blob bg-indigo-500/20 top-8 left-6 h-72 w-72"></div>
           <div className="animated-blob bg-cyan-400/20 bottom-12 right-10 h-80 w-80"></div>
