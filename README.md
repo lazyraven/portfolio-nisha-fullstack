@@ -29,3 +29,10 @@ npm run dev
 npm run build
 npm run preview
 ```
+## Deployment Details
+Connection between two repos section: Both repos contain the same code.
+- https://github.com/lazyraven/portfolio-nisha-fullstack/ - https://nisha-portfolio-react.netlify.app/
+- https://github.com/lazyraven/nisha-portfolio/tree/main/portfolio-react-vite - https://lifecodewithnisha.in/ 
+   - [ By Domain: https://lifecodewithnisha.in/ | (deploy help by Netlify with DNS nameservers)
+  - Netlify: https://app.netlify.com/projects/portfolio-nisha-fullstack/
+  - Github: https://lazyraven.github.io/portfolio-nisha-fullstack/ ]
