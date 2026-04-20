@@ -4,6 +4,7 @@ export const navLinks = [
   { title: 'Skills', href: '#skills' },
   { title: 'Experience', href: '#experience' },
   { title: 'Projects', href: '#projects' },
+  { title: 'Resume', href: '/resume.pdf', download: true },
   { title: 'Contact', href: '#contact' },
 ];
 

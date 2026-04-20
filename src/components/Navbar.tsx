@@ -18,7 +18,12 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-sm text-slate-700 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300">
+            <a 
+              key={link.href} 
+              href={link.href} 
+              download={link.download}
+              className="text-sm text-slate-700 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+            >
               {link.title}
             </a>
           ))}
@@ -42,7 +47,13 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         <div className="mt-4 rounded-[1.5rem] border border-slate-200/70 bg-white/90 p-5 text-slate-950 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl transition dark:border-white/10 dark:bg-slate-950/90 dark:text-slate-100 dark:shadow-slate-950/40 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-base text-slate-700 transition hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300" onClick={() => setMobileOpen(false)}>
+              <a 
+                key={link.href} 
+                href={link.href} 
+                download={link.download}
+                className="text-base text-slate-700 transition hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-300" 
+                onClick={() => setMobileOpen(false)}
+              >
                 {link.title}
               </a>
             ))}

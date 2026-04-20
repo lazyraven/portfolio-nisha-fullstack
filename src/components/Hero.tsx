@@ -1,4 +1,4 @@
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiDownload } from 'react-icons/fi';
 
 const typingPhrases = ['React + Node.js', 'MERN applications', 'SaaS product experiences'];
 
@@ -28,6 +28,9 @@ export default function Hero() {
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="#projects" className="btn-primary inline-flex items-center gap-2">
                 View Projects <FiArrowRight />
+              </a>
+              <a href="/resume.pdf" download className="btn-secondary inline-flex items-center gap-2">
+                <FiDownload /> Download Resume
               </a>
               <a href="#contact" className="btn-secondary">
                 Contact Me
