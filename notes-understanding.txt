@@ -1,0 +1,260 @@
+# ShareButton Component
+
+A reusable **Share Button UI component** for a portfolio built with **React + Vite + Tailwind CSS + Framer Motion**.
+
+---
+
+## 📌 Overview
+
+The `ShareButton` component provides a clean and modern way to share your portfolio. It is positioned in the **top-right corner** and includes smooth animations, theme support, and social sharing options.
+
+---
+
+## ⚙️ Features
+
+### 🔘 Button UI
+
+* Circular button with soft shadow
+* Fixed position (top-right corner)
+* Minimal, modern design
+
+### 🎬 Animations (Framer Motion)
+
+* Hover: `scale: 1.1`
+* Click: `scale: 0.95`
+* Popup: smooth slide + fade animation
+
+### 🎨 Styling
+
+* Light Theme: white background with slate border
+* Dark Theme: slate-950 background with white border
+* Cyan accent color on hover
+* Consistent spacing using Tailwind scale
+* Soft shadows for depth
+
+### 🧠 Behavior
+
+* Click to toggle share menu
+* Click outside to close automatically
+* Smooth transitions for better UX
+
+---
+
+## 📤 Share Options
+
+### 1. Copy Link
+
+* Copies portfolio URL to clipboard
+* Shows confirmation feedback
+
+### 2. WhatsApp
+
+* Opens WhatsApp with pre-filled message
+
+### 3. LinkedIn
+
+* Opens LinkedIn share dialog
+
+### 4. Twitter / X
+
+* Opens Twitter with pre-filled tweet
+
+---
+
+## 📱 Responsiveness
+
+* Works across all screen sizes
+* Fixed positioning ensures accessibility on mobile and desktop
+
+---
+
+## 🧩 Design System
+
+* Colors: cyan accents + slate neutrals
+* Typography: clean and professional hierarchy
+* Icons: interactive with hover scaling
+
+---
+
+## 🌗 Theme Support
+
+* Fully compatible with light and dark modes
+* Automatically adapts to your portfolio theme
+
+---
+
+## 📁 File Structure
+
+```
+src/
+  components/
+    ShareButton.tsx
+```
+
+---
+
+## 🚀 Usage
+
+Import and use inside your layout or main page:
+
+```tsx
+import ShareButton from "./components/ShareButton";
+
+function App() {
+  return (
+    <div>
+      <ShareButton />
+    </div>
+  );
+}
+```
+
+---
+
+## ✅ Summary
+
+This component enhances your portfolio by adding:
+
+* Easy sharing functionality
+* Smooth UI interactions
+* Modern, professional design
+
+---
+
+💡 Tip: Customize the share message and URL dynamically based on your portfolio content.
+
+--------Blog Post---------
+
+cd "f:\Projects\2026\nisha-portfolio\portfolio-react-vite\src" ; cat >> data.ts << 'EOF'
+
+export type BlogPost = {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  author: string;
+  tags: string[];
+  readTime: number;
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 'react-hooks-guide',
+    title: 'Mastering React Hooks: A Comprehensive Guide',
+    excerpt: 'Learn how to use React Hooks effectively in your applications. From useState to useContext, we cover everything you need to know.',
+    content: `React Hooks have revolutionized the way we write React components. Introduced in React 16.8, they allow you to use state and other React features without writing class components.
+
+## What Are Hooks?
+
+Hooks are functions that let you "hook into" React features. Some important hooks include useState, useEffect, useContext, useReducer, useCallback, and useMemo.
+
+## Best Practices
+
+1. Only call hooks at the top level of your function
+2. Only call hooks from React function components or custom hooks
+3. Use the ESLint plugin to enforce these rules
+4. Create custom hooks to share logic between components
+5. Keep your hooks small and focused on a single responsibility
+
+Hooks make React development more intuitive and help you write cleaner, more maintainable code.`,
+    date: '2024-03-15',
+    author: 'Nisha Yadav',
+    tags: ['React', 'JavaScript', 'Hooks'],
+    readTime: 8,
+  },
+  {
+    id: 'nodejs-express-api',
+    title: 'Building Scalable REST APIs with Node.js and Express',
+    excerpt: 'Discover best practices for building robust REST APIs using Node.js and Express. Learn about middleware, error handling, and deployment.',
+    content: `Building APIs is a fundamental skill for modern developers. Node.js with Express makes it simple to create fast, scalable web applications.
+
+## Why Node.js for APIs?
+
+Node.js is perfect for building APIs because of its non-blocking, event-driven architecture, large ecosystem with npm packages, and excellent performance for I/O operations.
+
+## Best Practices
+
+1. Use environment variables for configuration
+2. Implement proper error handling
+3. Use middleware for cross-cutting concerns
+4. Validate input data
+5. Use async/await for cleaner code
+6. Implement rate limiting
+7. Use HTTPS in production
+8. Version your APIs
+
+Building scalable APIs takes planning and good practices, but Express makes it accessible for developers of all levels.`,
+    date: '2024-03-10',
+    author: 'Nisha Yadav',
+    tags: ['Node.js', 'Express', 'API'],
+    readTime: 10,
+  },
+  {
+    id: 'mongodb-best-practices',
+    title: 'MongoDB Best Practices for Production',
+    excerpt: 'Essential tips and best practices for using MongoDB in production environments. Learn about indexing, replication, and optimization.',
+    content: `MongoDB is a powerful NoSQL database, but like any database, it requires proper configuration and practices to run smoothly in production.
+
+## Key Areas
+
+- **Indexing Strategy**: Indexes are crucial for query performance
+- **Data Validation**: Use schema validation to ensure data integrity
+- **Replication and Sharding**: Use replica sets for high availability and sharding for scalability
+- **Security**: Authentication, encryption at rest and in transit, role-based access control
+- **Performance Optimization**: Monitor slow queries, use aggregation pipeline, implement caching
+
+Following these practices will help you maintain a healthy MongoDB database in production.`,
+    date: '2024-02-28',
+    author: 'Nisha Yadav',
+    tags: ['MongoDB', 'Database', 'Backend'],
+    readTime: 9,
+  },
+  {
+    id: 'typescript-guide',
+    title: 'Getting Started with TypeScript',
+    excerpt: 'A beginner-friendly guide to TypeScript. Learn how static typing can help you write better, more maintainable JavaScript code.',
+    content: `TypeScript adds static typing to JavaScript, helping you catch errors before runtime and write more maintainable code.
+
+## Why TypeScript?
+
+TypeScript provides type safety, better IDE support, self-documenting code, and better tooling for large codebases.
+
+## Key Concepts
+
+- **Basic Types**: string, number, boolean, arrays
+- **Interfaces**: Define the structure of objects
+- **Functions with Types**: Type parameters and return types
+- **Generics**: Write reusable code with generic types
+
+TypeScript might seem like extra work initially, but it pays dividends in larger projects.`,
+    date: '2024-02-15',
+    author: 'Nisha Yadav',
+    tags: ['TypeScript', 'JavaScript', 'Frontend'],
+    readTime: 7,
+  },
+  {
+    id: 'tailwind-css-tips',
+    title: 'Tailwind CSS: Tips and Tricks for Faster Development',
+    excerpt: 'Discover advanced Tailwind CSS techniques to speed up your development process. Learn about customization, utilities, and best practices.',
+    content: `Tailwind CSS is a utility-first CSS framework that helps you build modern designs without leaving your HTML.
+
+## What is Tailwind CSS?
+
+Tailwind CSS takes a different approach to styling by providing low-level utility classes instead of component classes.
+
+## Key Features
+
+- **Configuration**: Customize Tailwind in tailwind.config.js
+- **Component Extraction**: Use @apply for repeated patterns
+- **Dark Mode**: Built-in dark mode support
+- **Responsive Design**: Responsive prefixes (sm:, md:, lg:)
+
+Tailwind CSS speeds up development and creates consistent, beautiful designs.`,
+    date: '2024-02-01',
+    author: 'Nisha Yadav',
+    tags: ['CSS', 'Tailwind', 'Frontend'],
+    readTime: 6,
+  },
+];
+EOF

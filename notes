@@ -150,7 +150,7 @@ Save the template with click on save..
 https://dashboard.emailjs.com/admin
 
 Write This Prompt on Copilot 
-Prompt : 4 on Copilot
+Forth Prompt : 4 on Copilot
 for portfolio-react-vite..
 when someone submit the contact details, I need to receive the details in my gmail account. suggest some free tools ?
 to integrate emailjs with our website.
@@ -166,3 +166,23 @@ Email Service > Click on Google > Service ID > service_yiqnzlc
 After save the toast msg implement i good UI form, with some small transition
 
 The EmailJS configuration is done..
+
+Five Prompt: Resume Section Build a resume section for a portfolio website using React and Tailwind CSS. The resume should include:
+- A downloadable PDF link 
+- A summary of experience and skills
+- A timeline of work experience
+
+Six Prompt: For Share Button/Icon
+ Design a minimal and modern share button/icon UI for this portfolio-react-vite website built.
+ Place the share icon in the top-right corner. Use a clean, 
+ subtle style that matches a professional developer portfolio (light or dark theme). 
+ The button should be circular, with a soft shadow, hover effect, and smooth animation. 
+ On click, open a small popup or tooltip with share options (copy link, WhatsApp, LinkedIn, Twitter). 
+ Keep spacing, colors, and typography consistent with a modern UI.
+
+Seven Prompt:
+Build a blog section for a portfolio website using React and Tailwind CSS. It should include:
+
+A list view displaying blog posts with title, date, and short excerpt
+A detailed view page for each blog post
+A search feature to filter posts by keywords
