@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { FiSearch, FiClock, FiTag, FiArrowRight, FiArrowLeft } from 'react-icons/fi';
+import { FiSearch, FiClock, FiTag, FiArrowRight, FiArrowLeft, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { blogPosts, type BlogPost } from '../data';
 
@@ -11,6 +11,9 @@ export function useBlogPosts() {
 export default function Blog() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
+
 
   const allTags = useMemo(() => {
     const tags = new Set<string>();
@@ -34,6 +37,24 @@ export default function Blog() {
       return matchesSearch && matchesTags;
     });
   }, [searchQuery, selectedTags]);
+
+
+  // Reset to page 1 when filters change
+  useMemo(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedTags]);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const currentPosts = filteredPosts.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filters change
+  const resetPageOnFilterChange = useMemo(() => {
+    setCurrentPage(1);
+  }, [searchQuery, selectedTags]);
+
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
@@ -121,13 +142,13 @@ export default function Blog() {
           )}
 
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            Showing {filteredPosts.length} of {blogPosts.length} posts
+            Showing {startIndex + 1}-{Math.min(endIndex, filteredPosts.length)} of {filteredPosts.length} posts
           </p>
         </motion.div>
 
         <div className="space-y-6">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post, index) => (
+          {currentPosts.length > 0 ? (
+            currentPosts.map((post, index) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -186,6 +207,51 @@ export default function Blog() {
             </motion.div>
           )}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-12 flex items-center justify-center gap-2"
+          >
+            <button
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-slate-600 transition hover:border-cyan-500 hover:text-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed dark:border-white/10 dark:text-slate-400 dark:hover:border-cyan-400 dark:hover:text-cyan-400"
+            >
+              <FiChevronLeft size={16} />
+              Previous
+            </button>
+
+            <div className="flex gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                    currentPage === page
+                      ? 'bg-cyan-500 text-white dark:bg-cyan-600'
+                      : 'border border-slate-200 text-slate-600 hover:border-cyan-500 hover:text-cyan-600 dark:border-white/10 dark:text-slate-400 dark:hover:border-cyan-400 dark:hover:text-cyan-400'
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-2 text-slate-600 transition hover:border-cyan-500 hover:text-cyan-600 disabled:opacity-50 disabled:cursor-not-allowed dark:border-white/10 dark:text-slate-400 dark:hover:border-cyan-400 dark:hover:text-cyan-400"
+            >
+              Next
+              <FiChevronRight size={16} />
+            </button>
+          </motion.div>
+        )}
+
       </div>
     </div>
   );
