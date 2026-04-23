@@ -186,3 +186,75 @@ Build a blog section for a portfolio website using React and Tailwind CSS. It sh
 A list view displaying blog posts with title, date, and short excerpt
 A detailed view page for each blog post
 A search feature to filter posts by keywords
+
+Eight Prompt: (Rough Prompt)
+(First I wrote this: For portfolio-react-vite I want to add multiple roadmaps based on skills. 
+Create a section for the roadmap, so that I can add one by one over the roadmap section. 
+and when ilick on particular roadmap skill, it'll open that particular skill section with the deeply notes section. 
+give me clear or more concise prompt. update this prompt.)
+ (after that I ask to give me more clear concise prompt) - it give me below prompt(slightly more technical version 
+ (better for code generation tools- further with component structure and folder architecture.))
+
+Eight Prompt: (Main)
+Build a Roadmap Feature in a React + Vite portfolio project with the following architecture and behavior:
+
+Core Requirements
+Create a Roadmap Section (page/component) to display multiple skill roadmaps.
+Each roadmap should be represented as a card component (title, short description).
+Roadmaps should be data-driven (stored in JSON or a JS object for easy updates).
+Navigation
+Use React Router for navigation.
+
+Clicking a roadmap card should route to:
+
+/roadmap/:skillName
+Detailed Roadmap Page
+Build a RoadmapDetail component that:
+Dynamically loads roadmap data based on route params.
+Displays:
+Skill title
+List of topics/modules
+Nested subtopics (if any)
+Notes Section
+Each topic should support a deep notes section:
+Expandable/collapsible UI (accordion or tabs)
+Supports formatted content (text, code snippets, links)
+Optional: Store notes separately and map them to topics.
+Suggested Folder Structure
+src/
+ ├── components/
+ │    ├── RoadmapCard.jsx
+ │    ├── RoadmapList.jsx
+ │    ├── TopicAccordion.jsx
+ │
+ ├── pages/
+ │    ├── Roadmaps.jsx
+ │    ├── RoadmapDetail.jsx
+ │
+ ├── data/
+ │    ├── roadmaps.js
+ │
+ ├── router/
+ │    ├── AppRouter.jsx
+Data Example
+export const roadmaps = [
+  {
+    id: "react",
+    title: "React Roadmap",
+    description: "Frontend development with React",
+    topics: [
+      {
+        title: "Basics",
+        notes: "JSX, components, props, state"
+      },
+      {
+        title: "Advanced",
+        notes: "Hooks, performance optimization"
+      }
+    ]
+  }
+];
+UI/UX Expectations
+Responsive layout (grid for roadmap cards)
+Clean and minimal design
+Easy to add/edit roadmap data without changing components
