@@ -1,8 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiSearch, FiClock, FiTag, FiArrowRight, FiArrowLeft, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiSearch, FiClock, FiTag, FiArrowRight, FiArrowLeft, FiChevronLeft, FiChevronRight, FiHome, FiFileText, FiBookOpen } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { blogPosts, type BlogPost } from '../data';
+import Navbar from './Navbar';
 
 export function useBlogPosts() {
   return blogPosts;
@@ -69,29 +70,54 @@ export default function Blog() {
     setSelectedTags([]);
   };
 
+    const [darkMode, setDarkMode] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return true;
+
+    const savedTheme = window.localStorage.getItem('theme');
+    if (savedTheme === 'dark') return true;
+    if (savedTheme === 'light') return false;
+
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? true;
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+    window.localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
   return (
     <div id="blog" className="min-h-screen bg-slate-50 dark:bg-slate-950">
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-6 flex text-center justify-between"
         >
+          <div></div>
+          <div>
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 flex items-center justify-center rounded-full 
+                        bg-gradient-to-r from-cyan-500 to-purple-500 shadow-lg">
+                <FiFileText className="text-white text-2xl" />
+              </div>
+            </div>
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+              Blog
+            </h1>
+            <p className="mx-auto max-w-2xl  mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Insights on web development, best practices, and technology trends.
+            </p>
+          </div>
+
           <Link
             to="/"
             className="flex items-center gap-2 text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 my-2 text-sm"
           >
-            <FiArrowLeft />
-            Back to Home Page
+            <FiHome className="h-4 w-4" />
+            Home
           </Link>
-          <h1 className="text-4xl font-bold text-slate-950 dark:text-white sm:text-5xl">
-            Blog
-          </h1>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-            Insights on web development, best practices, and technology trends.
-          </p>
         </motion.div>
 
         <motion.div

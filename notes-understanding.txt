@@ -258,3 +258,93 @@ Tailwind CSS speeds up development and creates consistent, beautiful designs.`,
   },
 ];
 EOF
+
+
+# 📌 Roadmap Feature
+
+## ✅ Overview
+
+The **Roadmap Feature** has been fully implemented in the portfolio project. It provides a structured and interactive way to explore different learning roadmaps such as React, AWS, TypeScript, and Node.js.
+
+---
+
+## 📂 Files Created
+
+| File                 | Purpose                                          |
+| -------------------- | ------------------------------------------------ |
+| `roadmaps.ts`        | Central data file containing all roadmap content |
+| `RoadmapCard.tsx`    | Displays individual roadmap summaries as cards   |
+| `RoadmapList.tsx`    | Renders a responsive grid of roadmap cards       |
+| `TopicAccordion.tsx` | Expandable accordion with markdown support       |
+| `Roadmaps.tsx`       | Main page listing all roadmaps                   |
+| `RoadmapDetail.tsx`  | Detailed roadmap view using dynamic routing      |
+
+---
+
+## 🌐 Routes
+
+| Route                 | Description                                            |
+| --------------------- | ------------------------------------------------------ |
+| `/roadmaps`           | Displays all available roadmaps in a grid              |
+| `/roadmap/:skillName` | Dynamic page for each roadmap (e.g., `/roadmap/react`) |
+
+---
+
+## 🚀 Features
+
+* **Data-driven architecture**
+  All roadmap content is managed in `roadmaps.ts`, making it easy to update or extend.
+
+* **Accordion UI**
+  Topics can be expanded or collapsed with smooth animations.
+
+* **Markdown support**
+  Notes support:
+
+  * Headings
+  * Lists
+  * Code blocks
+  * Bold text
+  * Inline code
+
+* **Subtopics support**
+  Topics can include nested subtopics displayed as tags.
+
+* **Responsive design**
+  Grid layout adapts across mobile, tablet, and desktop screens.
+
+* **Dark mode support**
+  Fully compatible with Tailwind CSS dark mode.
+
+---
+
+## 🧭 Navigation
+
+A **"Roadmaps"** link has been added to the navbar (`data.ts`), allowing users to easily access the feature via:
+
+```
+/roadmaps
+```
+
+---
+
+## ▶️ Usage
+
+1. Run the project
+2. Navigate to:
+
+   ```
+   /roadmaps
+   ```
+3. Select any roadmap to view detailed topics and notes
+
+---
+
+## 📈 Future Improvements (Optional)
+
+* Search and filter roadmaps
+* Progress tracking for users
+* Bookmark or save topics
+* API-based dynamic roadmap loading
+
+---

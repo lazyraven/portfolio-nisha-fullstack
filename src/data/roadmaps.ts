@@ -9,6 +9,8 @@ export interface Roadmap {
   title: string;
   description: string;
   topics: Topic[];
+  iframeUrl?: string;
+  viewUrl?: boolean;
 }
 
 export const roadmaps: Roadmap[] = [
@@ -94,6 +96,8 @@ Choose the right state management approach:
     id: 'aws',
     title: 'AWS Cloud Roadmap',
     description: 'Build cloud expertise with Amazon Web Services - from core services to architecture',
+    // iframeUrl: '/aws-devops-roadmap.html',
+    viewUrl: true,
     topics: [
       {
         title: 'Cloud Fundamentals',
@@ -177,6 +181,13 @@ Understanding cloud computing concepts:
         subtopics: ['VPC Setup', 'IAM Roles & Policies', 'Security Groups', 'Route 53', 'CloudFront'],
       },
     ],
+  },
+   {
+    id: 'iframe-aws',
+    title: 'Roadmap Iframe AWS',
+    description: 'Build cloud expertise with Amazon Web Services - from core services to architecture',
+    iframeUrl: '/aws-devops-roadmap.html',
+    topics: [],
   },
   {
     id: 'typescript',

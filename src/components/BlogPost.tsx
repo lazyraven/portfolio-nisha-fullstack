@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowLeft, FiClock, FiTag, FiShare2 } from 'react-icons/fi';
+import { FiArrowLeft, FiClock, FiTag, FiShare2, FiHome } from 'react-icons/fi';
 import { blogPosts, type BlogPost } from '../data';
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
@@ -86,7 +86,7 @@ export default function BlogPost() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8"
+          className="mb-8 flex justify-between"
         >
           <Link
             to="/blog"
@@ -94,6 +94,13 @@ export default function BlogPost() {
           >
             <FiArrowLeft />
             Back to Blog
+          </Link>
+          <Link
+            to="/"
+            className="flex items-center gap-2 text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 my-2 text-sm"
+          >
+            <FiHome className="h-4 w-4" />
+            Home
           </Link>
         </motion.div>
 
