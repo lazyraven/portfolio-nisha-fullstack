@@ -45,7 +45,7 @@ export default function RoadmapDetail() {
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Navigation Buttons - Show for iframe */}
-        {roadmap.iframeUrl && (
+        {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -67,10 +67,12 @@ export default function RoadmapDetail() {
               Home
             </Link>
           </motion.div>
-        )}
+        // )
+        }
 
         {/* Iframe for external roadmap content - Full page */}
-        {roadmap.iframeUrl && (
+        {/* {
+        roadmap.iframeUrl && (
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,26 +86,12 @@ export default function RoadmapDetail() {
               sandbox="allow-scripts allow-same-origin"
             />
           </motion.div>
-        )}
+        )
+        } */}
 
         {/* Show regular roadmap content when no iframe */}
-        {!roadmap.iframeUrl && (
+        {
           <>
-            {/* Back Button */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4 }}
-              className="mb-8"
-            >
-              <Link
-                to="/roadmaps"
-                className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
-              >
-                <FiArrowLeft className="h-4 w-4" />
-                Back to Roadmaps
-              </Link>
-            </motion.div>
 
             {/* Header */}
             <motion.div
@@ -117,10 +105,10 @@ export default function RoadmapDetail() {
               </div>
               <h1 className="mb-3 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl flex justify-between items-center gap-4">
                 {roadmap.title}
-                {roadmap.viewUrl &&
+                {roadmap.iframeUrl &&
                   (<div className="w-8 h-8 flex items-center justify-center rounded-full 
                         bg-gradient-to-r from-cyan-500 to-purple-500 shadow-lg">
-                    <Link to="/aws-devops-roadmap.html" target="_blank" rel="noopener noreferrer">
+                    <Link to={{ pathname: roadmap.iframeUrl }} target="_blank" rel="noopener noreferrer">
                       <FiEye className="text-white text-2xl" />
                     </Link>
                   </div>)
@@ -151,7 +139,8 @@ export default function RoadmapDetail() {
               ))}
             </motion.div>
           </>
-        )}
+        // )
+        }
       </div>
     </div>
   );

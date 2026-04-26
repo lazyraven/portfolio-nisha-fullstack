@@ -348,3 +348,198 @@ A **"Roadmaps"** link has been added to the navbar (`data.ts`), allowing users t
 * API-based dynamic roadmap loading
 
 ---
+
+# 📘 Data Structures & Algorithms (DSA) Roadmap
+
+A structured roadmap covering essential Data Structures & Algorithms concepts and problem-solving patterns.
+
+---
+
+## 🔹 Topics Covered
+
+### 1. Arrays & Strings
+- Two Pointers Technique  
+- Sliding Window  
+- String Manipulation  
+- Prefix Sum / Subarrays  
+
+---
+
+### 2. Linked Lists
+- Singly & Doubly Linked Lists  
+- Reverse Linked List  
+- Cycle Detection (Floyd’s Algorithm)  
+- Merge Two Lists  
+
+---
+
+### 3. Stacks & Queues
+- Stack & Queue Implementation  
+- Balanced Parentheses  
+- Monotonic Stack  
+- Breadth-First Search (BFS)  
+
+---
+
+### 4. Hash Tables
+- HashMap & HashSet  
+- Frequency Counter Pattern  
+- Two Sum Pattern  
+- Collision Handling  
+
+---
+
+### 5. Trees
+- Tree Traversals (Inorder, Preorder, Postorder)  
+- Breadth-First Search (BFS)  
+- Binary Search Tree (BST) Operations  
+- Lowest Common Ancestor (LCA)  
+
+---
+
+### 6. Graphs
+- Graph Representations (Adjacency List / Matrix)  
+- Depth-First Search (DFS) & BFS  
+- Cycle Detection  
+- Topological Sorting  
+
+---
+
+### 7. Sorting Algorithms
+- Merge Sort  
+- Quick Sort  
+- Heap Sort  
+- Time & Space Complexity Comparison  
+
+---
+
+### 8. Searching Algorithms
+- Binary Search  
+- Binary Search Variations  
+- DFS / BFS Search  
+- Search in Rotated Sorted Array  
+
+---
+
+### 9. Recursion & Backtracking
+- Recursion Basics  
+- Permutations & Combinations  
+- N-Queens Problem  
+- Subset Generation  
+
+---
+
+### 10. Dynamic Programming
+- Fibonacci Pattern  
+- 0/1 Knapsack  
+- Longest Common Subsequence (LCS)  
+- Coin Change Problem  
+
+---
+
+### 11. Heaps & Priority Queues
+- Min Heap & Max Heap  
+- Kth Largest / Smallest Element  
+- Median in Data Stream  
+- Heap Applications  
+
+---
+
+## 🚀 How to Use This Roadmap
+
+- Focus on understanding **patterns**, not just memorizing solutions  
+- Practice consistently on coding platforms  
+- Revisit weak topics regularly  
+- Track your progress topic-wise  
+
+---
+
+## 📌 Goal
+
+Build strong problem-solving skills and prepare effectively for coding interviews by mastering core DSA concepts.
+
+---
+
+# 📘 JavaScript Fundamentals Roadmap
+
+A structured guide to mastering core JavaScript concepts, from basics to asynchronous programming and DOM manipulation.
+
+---
+
+## 🔹 Topics Covered
+
+### 1. JavaScript Basics
+- Variables (`var`, `let`, `const`)  
+- Data Types (Primitive & Reference)  
+- Operators (Arithmetic, Comparison, Logical)  
+
+---
+
+### 2. Control Flow
+- Conditional Statements (`if`, `else`, `switch`)  
+- Loops (`for`, `while`, `do...while`)  
+- Break & Continue  
+
+---
+
+### 3. Functions
+- Function Declarations & Expressions  
+- Arrow Functions  
+- Closures  
+- Higher-Order Functions  
+
+---
+
+### 4. Arrays
+- Array Methods (`push`, `pop`, `slice`, `splice`)  
+- Functional Methods (`map`, `filter`, `reduce`)  
+- Array Destructuring  
+
+---
+
+### 5. Objects
+- Object Creation  
+- Methods in Objects  
+- Object Destructuring  
+- `this` Keyword  
+
+---
+
+### 6. ES6+ Features
+- Template Literals  
+- Destructuring  
+- Rest & Spread Operators  
+- Optional Chaining (`?.`)  
+- Modules (`import/export`)  
+
+---
+
+### 7. Asynchronous JavaScript
+- Callbacks  
+- Promises  
+- Async/Await  
+- Error Handling (`try...catch`)  
+
+---
+
+### 8. DOM Manipulation
+- Selecting Elements (`querySelector`, `getElementById`)  
+- Modifying DOM  
+- Event Handling  
+
+---
+
+## 🚀 How to Use
+
+- Learn concepts step-by-step  
+- Practice with small projects  
+- Build real-world applications  
+- Revise concepts regularly  
+
+---
+
+## 🎯 Goal
+
+Develop a strong foundation in JavaScript to build modern web applications and prepare for frontend/backend development.
+
+---
