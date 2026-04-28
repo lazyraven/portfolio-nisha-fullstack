@@ -58,9 +58,9 @@ export default function Contact() {
               <p>
                 Email: <span className="font-semibold text-slate-950 dark:text-white">nishayadav1703@gmail.com</span>
               </p>
-              <p>
+              {/* <p>
                 Phone: <span className="font-semibold text-slate-950 dark:text-white">+1 (555) 123-4567</span>
-              </p>
+              </p> */}
               <p>
                 LinkedIn:{' '}
                 <a href="#" className="text-cyan-600 transition hover:text-cyan-500 dark:text-cyan-300 dark:hover:text-cyan-200">

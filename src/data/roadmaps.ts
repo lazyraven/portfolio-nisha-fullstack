@@ -1869,5 +1869,579 @@ class MaxPriorityQueue {
       },
     ],
   },
+  {
+    id: 'java',
+    title: 'Java Roadmap',
+    description: 'Master object-oriented programming with Java - from basics to enterprise development',
+    iframeUrl: '/java-roadmap-2026.html',
+    topics: [
+      {
+        title: 'Java Basics',
+        notes: `## Getting Started with Java
+
+Learn the fundamentals of the language that powers enterprise applications:
+
+### Variables & Data Types
+\`\`\`java
+// Primitive types
+int age = 25;              // Integer
+double price = 19.99;      // Decimal
+char grade = 'A';          // Single character
+boolean isActive = true;   // Boolean
+
+// Reference types
+String name = "Nisha";     // String (object)
+Integer count = 10;        // Wrapper class
+\`\`\`
+
+### Primitive Types
+- **byte**: 8-bit integer (-128 to 127)
+- **short**: 16-bit integer
+- **int**: 32-bit integer (most common)
+- **long**: 64-bit integer
+- **float**: 32-bit decimal
+- **double**: 64-bit decimal (most common)
+- **char**: 16-bit Unicode character
+- **boolean**: true/false
+
+### Type Conversion
+- Implicit: smaller to larger (int → long)
+- Explicit: larger to smaller (double → int) via casting`,
+        subtopics: ['Variables & Data Types', 'Primitive Types', 'Type Conversion', 'Constants & Final'],
+      },
+      {
+        title: 'Control Flow',
+        notes: `## Controlling Program Execution
+
+### Conditionals
+\`\`\`java
+if (age >= 18) {
+    System.out.println("Adult");
+} else if (age >= 13) {
+    System.out.println("Teenager");
+} else {
+    System.out.println("Child");
+}
+
+// Ternary operator
+String status = age >= 18 ? "Adult" : "Minor";
+\`\`\`
+
+### Loops
+\`\`\`java
+// for loop
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+// Enhanced for loop (for-each)
+for (String item : array) {
+    System.out.println(item);
+}
+
+// while loop
+while (condition) {
+    // code
+}
+
+// do-while (executes at least once)
+do {
+    // code
+} while (condition);
+\`\`\`
+
+### Switch Statement
+\`\`\`java
+// Traditional switch
+switch (day) {
+    case 0: System.out.println("Sunday"); break;
+    case 1: System.out.println("Monday"); break;
+    default: System.out.println("Other day");
+}
+
+// Switch expression (Java 14+)
+String result = switch (day) {
+    case 0 -> "Sunday";
+    case 1 -> "Monday";
+    default -> "Other day";
+};
+\`\`\``,
+        subtopics: ['If-else', 'Ternary Operator', 'Switch', 'For Loops', 'While Loops'],
+      },
+      {
+        title: 'Methods & Functions',
+        notes: `## Methods in Java
+
+### Method Declaration
+\`\`\`java
+// Basic method
+public static int add(int a, int b) {
+    return a + b;
+}
+
+// Void method
+public static void printMessage(String msg) {
+    System.out.println(msg);
+}
+
+// Method overloading (same name, different params)
+public static int add(int a, int b) { return a + b; }
+public static double add(double a, double b) { return a + b; }
+public static int add(int a, int b, int c) { return a + b + c; }
+\`\`\`
+
+### Varargs (Variable Arguments)
+\`\`\`java
+public static int sum(int... numbers) {
+    int total = 0;
+    for (int num : numbers) {
+        total += num;
+    }
+    return total;
+}
+
+// Usage: sum(1, 2, 3, 4, 5)
+\`\`\`
+
+### Recursion
+\`\`\`java
+public static int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+\`\`\`
+
+### Key Concepts
+- Static vs instance methods
+- Method parameters (pass by value)
+- Return types and void`,
+        subtopics: ['Method Declaration', 'Method Overloading', 'Varargs', 'Recursion', 'Static Methods'],
+      },
+      {
+        title: 'Object-Oriented Programming',
+        notes: `## OOP Principles in Java
+
+### Classes & Objects
+\`\`\`java
+public class Person {
+    // Fields (attributes)
+    private String name;
+    private int age;
+    
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Getter
+    public String getName() {
+        return name;
+    }
+    
+    // Setter
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // Method
+    public void greet() {
+        System.out.println("Hello, I'm " + name);
+    }
+}
+
+// Usage
+Person p = new Person("Nisha", 25);
+p.greet();
+\`\`\`
+
+### Encapsulation
+- Private fields with public getters/setters
+- Data hiding and validation
+
+### Inheritance
+\`\`\`java
+class Animal {
+    public void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+    public void bark() {
+        System.out.println("Woof!");
+    }
+}
+\`\`\`
+
+### Polymorphism
+- Method overriding (@Override)
+- Upcasting and downcasting
+- Interface polymorphism`,
+        subtopics: ['Classes & Objects', 'Constructors', 'Encapsulation', 'Inheritance', 'Polymorphism'],
+      },
+      {
+        title: 'Arrays & Collections',
+        notes: `## Working with Arrays & Collections
+
+### Arrays
+\`\`\`java
+// Array declaration
+int[] numbers = new int[5];
+int[] numbers2 = {1, 2, 3, 4, 5};
+
+// Accessing elements
+System.out.println(numbers2[0]);  // 1
+System.out.println(numbers2.length);  // 5
+\`\`\`
+
+### ArrayList (Dynamic Array)
+\`\`\`java
+import java.util.ArrayList;
+
+ArrayList<String> list = new ArrayList<>();
+list.add("Apple");
+list.add("Banana");
+list.add(0, "Mango");  // Insert at index
+System.out.println(list.get(0));  // Mango
+list.remove("Banana");
+list.remove(0);
+\`\`\`
+
+### HashMap (Key-Value Pairs)
+\`\`\`java
+import java.util.HashMap;
+
+HashMap<String, Integer> map = new HashMap<>();
+map.put("Apple", 10);
+map.put("Banana", 5);
+System.out.println(map.get("Apple"));  // 10
+map.containsKey("Banana");  // true
+map.remove("Apple");
+\`\`\`
+
+### HashSet (Unique Elements)
+\`\`\`java
+import java.util.HashSet;
+
+HashSet<Integer> set = new HashSet<>();
+set.add(1);
+set.add(2);
+set.add(1);  // Duplicate, ignored
+System.out.println(set.size());  // 2
+\`\`\`
+
+### Other Collections
+- **LinkedList**: Doubly linked list
+- **TreeSet**: Sorted unique elements
+- **TreeMap**: Sorted key-value pairs
+- **Queue/Deque**: FIFO operations`,
+        subtopics: ['Arrays', 'ArrayList', 'HashMap', 'HashSet', 'LinkedList', 'TreeMap/TreeSet'],
+      },
+      {
+        title: 'Exception Handling',
+        notes: `## Exception Handling in Java
+
+### Try-Catch Blocks
+\`\`\`java
+try {
+    int result = 10 / 0;  // ArithmeticException
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero: " + e.getMessage());
+} finally {
+    System.out.println("This always executes");
+}
+\`\`\`
+
+### Multiple Catch Blocks
+\`\`\`java
+try {
+    // Code that might throw exceptions
+    int[] arr = new int[5];
+    arr[10] = 100;  // ArrayIndexOutOfBoundsException
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array index out of bounds");
+} catch (NullPointerException e) {
+    System.out.println("Null pointer error");
+} catch (Exception e) {
+    System.out.println("Any other exception: " + e.getMessage());
+}
+\`\`\`
+
+### Throw vs Throws
+\`\`\`java
+// Throws (declare in method signature)
+public void readFile() throws IOException {
+    // Code that might throw IOException
+}
+
+// Throw (explicitly throw an exception)
+public void validate(int age) {
+    if (age < 0) {
+        throw new IllegalArgumentException("Age cannot be negative");
+    }
+}
+\`\`\`
+
+### Custom Exceptions
+\`\`\`java
+public class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+\`\`\``,
+        subtopics: ['Try-Catch', 'Multiple Catch', 'Throw vs Throws', 'Custom Exceptions', 'Finally Block'],
+      },
+      {
+        title: 'Interfaces & Abstract Classes',
+        notes: `## Interfaces vs Abstract Classes
+
+### Interface (Java 8+)
+\`\`\`java
+// Interface (blueprint)
+interface Drawable {
+    void draw();  // abstract method
+    
+    default void display() {  // default method
+        System.out.println("Displaying...");
+    }
+    
+    static void print() {  // static method
+        System.out.println("Printing...");
+    }
+}
+
+// Implementation
+class Circle implements Drawable {
+    @Override
+    public void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+\`\`\`
+
+### Abstract Class
+\`\`\`java
+abstract class Animal {
+    private String name;
+    
+    public Animal(String name) {
+        this.name = name;
+    }
+    
+    // Abstract method (no body)
+    public abstract void makeSound();
+    
+    // Concrete method
+    public void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    public Dog() {
+        super("Dog");
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+\`\`\`
+
+### Key Differences
+| Feature | Interface | Abstract Class |
+|---------|-----------|----------------|
+| Methods | Abstract, default, static | Abstract, concrete |
+| Fields | Constants only | Any |
+| Constructors | No | Yes |
+| Multiple | Yes (multiple) | No (single) |`,
+        subtopics: ['Interface Declaration', 'Abstract Class', 'Default Methods', 'Functional Interfaces', 'Lambda Expressions'],
+      },
+      {
+        title: 'Concurrency & Multithreading',
+        notes: `## Multithreading in Java
+
+### Creating Threads
+\`\`\`java
+// Method 1: Extend Thread
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+// Method 2: Implement Runnable
+class MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Runnable running");
+    }
+}
+
+// Usage
+Thread t1 = new MyThread();
+Thread t2 = new Thread(new MyRunnable());
+t1.start();
+t2.start();
+\`\`\`
+
+### Thread Synchronization
+\`\`\`java
+class Counter {
+    private int count = 0;
+    
+    public synchronized void increment() {
+        count++;
+    }
+    
+    public int getCount() {
+        return count;
+    }
+}
+\`\`\`
+
+### ExecutorService
+\`\`\`java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+ExecutorService executor = Executors.newFixedThreadPool(4);
+executor.submit(() -> {
+    System.out.println("Task 1");
+});
+executor.submit(() -> {
+    System.out.println("Task 2");
+});
+executor.shutdown();
+\`\`\`
+
+### Thread States
+- NEW → RUNNABLE → BLOCKED/WAITING → TERMINATED`,
+        subtopics: ['Thread Creation', 'Runnable vs Thread', 'Synchronization', 'ExecutorService', 'Thread States'],
+      },
+      {
+        title: 'Streams & Lambda Expressions',
+        notes: `## Functional Programming in Java
+
+### Lambda Expressions
+\`\`\`java
+// Without lambda
+Runnable r = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Running");
+    }
+};
+
+// With lambda
+Runnable r = () -> System.out.println("Running");
+
+// With parameters
+Comparator<Integer> comp = (a, b) -> b - a;
+\`\`\`
+
+### Stream API
+\`\`\`java
+import java.util.stream.Collectors;
+import java.util.Arrays;
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+// Filter even numbers
+List<Integer> evens = numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .collect(Collectors.toList());
+
+// Double each number
+List<Integer> doubled = numbers.stream()
+    .map(n -> n * 2)
+    .collect(Collectors.toList());
+
+// Sum all numbers
+int sum = numbers.stream()
+    .reduce(0, Integer::sum);
+
+// Find first even
+Optional<Integer> firstEven = numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .findFirst();
+\`\`\`
+
+### Common Stream Operations
+- **filter()**: Filter elements by condition
+- **map()**: Transform elements
+- **flatMap()**: Flatten nested collections
+- **reduce()**: Combine elements
+- **collect()**: Convert to collection
+- **forEach()**: Iterate`,
+        subtopics: ['Lambda Syntax', 'Stream Creation', 'Filter/Map/Reduce', 'Collectors', 'Optional'],
+      },
+      {
+        title: 'Java 8+ Features',
+        notes: `## Modern Java Features
+
+### Optional
+\`\`\`java
+import java.util.Optional;
+
+Optional<String> name = Optional.of("Nisha");
+System.out.println(name.get());  // Nisha
+
+// Safe alternatives
+String result = name.orElse("Default");
+String result2 = name.orElseGet(() -> "Computed default");
+
+// Check before getting
+if (name.isPresent()) {
+    System.out.println(name.get());
+}
+
+// Transform
+Optional<Integer> length = name.map(String::length);
+\`\`\`
+
+### Date & Time API
+\`\`\`java
+import java.time.*;
+
+LocalDate today = LocalDate.now();
+LocalDate birthday = LocalDate.of(2000, 1, 1);
+
+Period age = Period.between(birthday, today);
+System.out.println(age.getYears());
+
+LocalTime time = LocalTime.now();
+Duration duration = Duration.between(time, time.plusHours(2));
+\`\`\`
+
+### Records (Java 14+)
+\`\`\`java
+public record Person(String name, int age) {
+    // Auto-generates:
+    // - Constructor
+    // - Getters (name(), age())
+    // - equals(), hashCode(), toString()
+}
+
+// Usage
+Person p = new Person("Nisha", 25);
+System.out.println(p.name());  // Nisha
+\`\`\`
+
+### Pattern Matching (Java 16+)
+\`\`\`java
+Object obj = "Hello";
+if (obj instanceof String s) {
+    System.out.println(s.toUpperCase());  // s is scoped here
+}
+\`\`\``,
+        subtopics: ['Optional', 'Date/Time API', 'Records', 'Pattern Matching', 'Text Blocks'],
+      },
+    ],
+  },
 
 ];
