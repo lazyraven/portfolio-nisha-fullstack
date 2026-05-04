@@ -554,6 +554,7 @@ Understanding cloud computing concepts:
     id: 'typescript',
     title: 'TypeScript Roadmap',
     description: 'Level up your JavaScript with type safety and modern TypeScript patterns',
+    iframeUrl: '/typescript-roadmap-2026.html',
     topics: [
       {
         title: 'TypeScript Basics',
