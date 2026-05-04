@@ -1,3 +1,10 @@
+import JavaScriptRoadmapPage from "../pages/JavaScriptRoadmapPage";
+import ReactRoadmapPage from "../pages/ReactRoadmapPage";
+import NodeRoadmapPage from "../pages/NodeRoadmapPage";
+import MongoRoadmapPage from "../pages/MongoRoadmapPage";
+import DsaRoadmapPage from "../pages/DsaRoadmapPage";
+import JavaRoadmapPage from "../pages/JavaRoadmapPage";
+
 export interface Topic {
   title: string;
   notes: string;
@@ -10,6 +17,7 @@ export interface Roadmap {
   description: string;
   topics: Topic[];
   iframeUrl?: string;
+  component?: React.ComponentType;
 }
 
 export const roadmaps: Roadmap[] = [
@@ -18,6 +26,7 @@ export const roadmaps: Roadmap[] = [
     title: 'JavaScript Roadmap',
     description: 'Master the language of the web - from basics to advanced concepts',
     iframeUrl: '/javascript-roadmap-2026.html',
+    component: JavaScriptRoadmapPage,
     topics: [
       {
         title: 'JavaScript Basics',
@@ -370,6 +379,7 @@ element.previousElementSibling;
     title: 'React Roadmap',
     description: 'Master frontend development with React - from basics to advanced patterns',
     iframeUrl: '/react-roadmap-2026.html',
+    component: ReactRoadmapPage,
     topics: [
       {
         title: 'Fundamentals',
@@ -628,6 +638,7 @@ class Developer {
     title: 'Node.js Backend Roadmap',
     description: 'Build scalable server-side applications with Node.js and Express',
     iframeUrl: '/nodejs-backend-roadmap.html',
+    component: NodeRoadmapPage,
     topics: [
       {
         title: 'Node.js Fundamentals',
@@ -712,6 +723,7 @@ const User = mongoose.model('User', userSchema);
     title: 'MongoDB Roadmap',
     description: 'Master the most popular NoSQL database - from basics to advanced scaling',
     iframeUrl: '/mongodb-roadmap-2026.html',
+    component: MongoRoadmapPage,
     topics: [
       {
         title: 'MongoDB Basics',
@@ -1125,6 +1137,7 @@ mongoose.connect(process.env.MONGODB_URI);
     title: 'DSA Roadmap',
     description: 'Master Data Structures and Algorithms - from fundamentals to advanced problem-solving',
     iframeUrl: '/dsa-roadmap-2026.html',
+    component: DsaRoadmapPage,
     topics: [
       {
         title: 'Arrays & Strings',
@@ -1874,6 +1887,7 @@ class MaxPriorityQueue {
     title: 'Java Roadmap',
     description: 'Master object-oriented programming with Java - from basics to enterprise development',
     iframeUrl: '/java-roadmap-2026.html',
+    component: JavaRoadmapPage,
     topics: [
       {
         title: 'Java Basics',

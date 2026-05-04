@@ -261,3 +261,47 @@ html.dark .overlay-panel {
   33% { transform: translate(20px, -40px) scale(1.05); }
   66% { transform: translate(-30px, 20px) scale(0.92); }
 }
+
+.roadmap-mesh::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.75), transparent 92%);
+}
+
+html.dark .roadmap-mesh::before {
+  background-image:
+    linear-gradient(rgba(71, 85, 105, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(71, 85, 105, 0.18) 1px, transparent 1px);
+}
+
+.roadmap-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.roadmap-card {
+  position: relative;
+}
+
+.roadmap-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 30%);
+  opacity: 0.5;
+}
+
+.roadmap-code code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

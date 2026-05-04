@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiBookOpen } from 'react-icons/fi';
+import { FiArrowRight, FiBookOpen, FiEye } from 'react-icons/fi';
 import type { Roadmap } from '../data/roadmaps';
 
 interface RoadmapCardProps {
@@ -8,12 +8,23 @@ interface RoadmapCardProps {
 
 export default function RoadmapCard({ roadmap }: RoadmapCardProps) {
   return (
-    <Link
-      to={`/roadmap/${roadmap.id}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-lg shadow-slate-900/10 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/50 hover:shadow-xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-slate-900/80 dark:shadow-slate-950/30 dark:hover:border-cyan-500/30"
-    >
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-lg shadow-slate-900/10 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/50 hover:shadow-xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-slate-900/80 dark:shadow-slate-950/30 dark:hover:border-cyan-500/30">
       {/* Background gradient on hover */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-cyan-500/5 to-fuchsia-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+      {(roadmap.component || roadmap.iframeUrl) && (
+        <Link
+          to={`/roadmaps/iframe/${roadmap.id}`}
+          aria-label={`Open ${roadmap.title} preview`}
+          title="Open roadmap preview"
+          target='_blank'
+          className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/20 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+        >
+          <FiEye className="h-5 w-5" />
+        </Link>
+      )}
+
+      <Link to={`/roadmap/${roadmap.id}`} className="flex flex-1 flex-col">
 
       {/* Icon */}
       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-fuchsia-500 text-white shadow-lg shadow-cyan-500/25">
@@ -40,6 +51,7 @@ export default function RoadmapCard({ roadmap }: RoadmapCardProps) {
         <span>View Roadmap</span>
         <FiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
       </div>
-    </Link>
+      </Link>
+    </article>
   );
 }

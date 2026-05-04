@@ -15,6 +15,7 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Roadmaps from './pages/Roadmaps';
 import RoadmapDetail from './pages/RoadmapDetail';
+import RoadmapIframe from './pages/RoadmapIframe';
 
 // ✅ Home now receives props
 function Home({ darkMode, setDarkMode }: any) {
@@ -75,6 +76,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/roadmaps" element={<Roadmaps />} />
+        <Route path="/roadmaps/iframe/:skillName" element={<RoadmapIframe />} />
         <Route path="/roadmap/:skillName" element={<RoadmapDetail />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
