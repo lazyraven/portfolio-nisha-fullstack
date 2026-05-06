@@ -4,6 +4,7 @@ import NodeRoadmapPage from "../pages/NodeRoadmapPage";
 import MongoRoadmapPage from "../pages/MongoRoadmapPage";
 import DsaRoadmapPage from "../pages/DsaRoadmapPage";
 import JavaRoadmapPage from "../pages/JavaRoadmapPage";
+import AwsDevopsRoadmapPage from "../pages/AwsDevopsRoadmapPage";
 
 export interface Topic {
   title: string;
@@ -456,9 +457,10 @@ Choose the right state management approach:
   },
   {
     id: 'aws',
-    title: 'AWS Cloud Roadmap',
-    description: 'Build cloud expertise with Amazon Web Services - from core services to architecture',
+    title: 'AWS DevOps Roadmap',
+    description: 'Build AWS DevOps expertise with CI/CD, cloud services, IaC, containers, monitoring, and security',
     iframeUrl: '/aws-devops-roadmap.html',
+    component: AwsDevopsRoadmapPage,
     topics: [
       {
         title: 'Cloud Fundamentals',
