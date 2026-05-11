@@ -12,7 +12,7 @@ export const navLinks = [
 ];
 
 export const skills = [
-  { category: 'Frontend', items: ['React', 'Vue', 'Angular', 'JavaScript'] },
+  { category: 'Frontend', items: ['JavaScript', 'React', 'Vue', 'Angular',] },
   { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB'] },
   // { category: 'Database', items: ['MongoDB', 'PostgreSQL'] },
   { category: 'Tools', items: ['Jenkins', 'Azure DevOps', 'Git'] },
