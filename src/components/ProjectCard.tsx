@@ -20,6 +20,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="absolute left-5 top-5 rounded-full border border-slate-200/70 bg-white/90 px-3 py-1 text-xs uppercase tracking-[0.3em] text-cyan-700 shadow-[0_0_18px_rgba(56,189,248,0.08)] dark:border-white/10 dark:bg-slate-950/70 dark:text-cyan-300 dark:shadow-[0_0_18px_rgba(56,189,248,0.12)]">
           {project.highlight ? 'Featured Project' : 'Project'}
         </div>
+        {project.period && (
+          <div className="absolute bottom-5 left-5 rounded-full border border-slate-200/70 bg-white/90 px-3 py-1 text-xs font-semibold text-slate-700 dark:border-white/10 dark:bg-slate-950/70 dark:text-slate-300">
+            {project.period}
+          </div>
+        )}
         {!project.image && (
           <div className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-slate-950/80 dark:text-white/90">
             Preview
@@ -44,24 +49,30 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </span>
           ))}
         </div>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href={project.github}
-            className="btn-secondary inline-flex items-center justify-center"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          <a
-            href={project.live}
-            className="btn-primary inline-flex items-center justify-center"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Live Demo
-          </a>
-        </div>
+        {(project.github || project.live) && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {project.github && (
+              <a
+                href={project.github}
+                className="btn-secondary inline-flex items-center justify-center"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            )}
+            {project.live && (
+              <a
+                href={project.live}
+                className="btn-primary inline-flex items-center justify-center"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Demo
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );

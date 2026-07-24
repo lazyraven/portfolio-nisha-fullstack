@@ -12,77 +12,137 @@ export const navLinks = [
 ];
 
 export const skills = [
-  { category: 'Frontend', items: ['JavaScript', 'React', 'Vue', 'Angular',] },
-  { category: 'Backend', items: ['Node.js', 'Express', 'MongoDB'] },
-  // { category: 'Database', items: ['MongoDB', 'PostgreSQL'] },
-  { category: 'Tools', items: ['Jenkins', 'Azure DevOps', 'Git'] },
+  { category: 'Frontend', items: ['Vue.js', 'React', 'Angular', 'JavaScript', 'TypeScript', 'CSS', 'HTML', 'Tailwind CSS', 'Bootstrap'] },
+  { category: 'Backend', items: ['Node.js', 'Express.js', 'MongoDB'] },
+  { category: 'Tools & DevOps', items: ['Git', 'GitLab', 'Azure DevOps', 'Jenkins', 'Rally', 'Swagger'] },
 ];
 
 export const experience = [
   {
     company: 'Genpact',
-    period: '2022 – Present',
-    title: 'Senior Full Stack Developer',
-    summary: 'Driving product delivery with full stack ownership across React interfaces and Node.js services.',
-    bullets: ['Leading cross-functional delivery of scalable applications', 'Building modern React dashboards with Node.js APIs', 'Mentoring teams on best practices and cloud deployments'],
+    period: "Jun '22 - Present",
+    title: 'Software Engineer (Full-Stack Developer)',
+    summary: 'Developing and enhancing Angular-based enterprise applications for GE, with frontend components, testing, CI/CD, and backend module work.',
+    bullets: [
+      'Developed and enhanced features in Angular-based enterprise apps for GE (ARMS & Aero Store), improving usability and performance.',
+      'Implemented reusable UI components using Angular Material: mat-select, mat-dialog, mat-table, and mat-paginator.',
+      'Conducted unit testing with Karma and Jasmine; integrated CI/CD pipelines using Jenkins.',
+      'Worked on backend features and APIs using Node.js and MongoDB for internal modules.',
+      'Collaborated with cross-functional teams in Agile sprints using Rally and Azure DevOps.',
+    ],
   },
   {
     company: 'R Systems International',
-    period: '2020 – 2022',
-    title: 'Full Stack Developer',
-    summary: 'Delivered enterprise-grade web applications with a focus on performance and team collaboration.',
-    bullets: ['Delivered enterprise web apps using JavaScript and MongoDB', 'Improved performance and usability across products', 'Collaborated with product and QA teams to ship features quickly'],
+    period: "Feb '20 - Mar '22",
+    title: 'Software Engineer (Front-End Developer)',
+    summary: 'Built Vue.js and Kendo UI modules for Smart 2.0, integrating APIs and coordinating delivery with QA and backend teams.',
+    bullets: [
+      'Built core modules for the Smart 2.0 (USMed Equip) application using Vue.js and Kendo UI.',
+      'Delivered features for Service Test Manager and Inventory Action modules, ensuring QA approval.',
+      'Integrated APIs using Swagger and managed tasks and sprints using Azure DevOps.',
+      'Collaborated closely with QA and backend teams to ensure seamless deployments.',
+    ],
   },
 ];
+
+export const education = [
+  {
+    degree: 'B. Tech in Bachelor of Technology',
+    institution: 'Rajasthan Technical University (RTU), Kota',
+    period: "Jun '15 - May '19",
+    details: 'GPA: 63%. Location: Kota, India.',
+  },
+];
+
+export const achievements = [
+  'Achieved high unit test coverage with Karma and Jasmine on Aero Alliance work.',
+  'Delivered QA-approved features for Service Test Manager and Inventory Action modules.',
+  'Participated in extracurricular activities in college, including sketching, dancing, and running marathons.',
+];
+
+export const strengths = [
+  'Responsive web application development',
+  'UI/UX optimization',
+  'Reusable component implementation',
+  'Unit testing with Karma and Jasmine',
+  'CI/CD pipeline integration using Jenkins',
+];
+
+export const softSkills = [
+  'Cross-functional collaboration',
+  'Agile sprint participation',
+  'QA and backend team coordination',
+  'Seamless deployment support',
+];
+
+export const careerGoals = [
+  'Add Information',
+];
+
+export const preferredRoles = [
+  'Full Stack Developer',
+  'Front-End Developer',
+];
+
+export const certifications = [
+  'Add Information',
+];
+
 
 export type Project = {
   title: string;
   description: string;
   tech: string[];
-  github: string;
-  live: string;
+  github?: string;
+  live?: string;
   highlight?: boolean;
   image?: string;
+  period?: string;
 };
 
 export const projects: Project[] = [
   {
+    title: 'Aero Alliance',
+    description: 'Built reusable Angular Material components, dynamic binding for responsive UIs, complex question matrix flows, drag-and-drop table rows, and in-cell filter modals across Smartshop, ACT, Techpub, EFR, and Routerscope.',
+    tech: ['Angular', 'JavaScript', 'Node.js', 'HTML/CSS', 'Bootstrap', 'Karma', 'Jasmine'],
+    highlight: true,
+    period: 'Present',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    title: 'GE ELITE',
+    description: 'Developed modular Angular features for Engine Lifecycle Information Tracking, including Tracking Report, Fleet Intelligence, advanced table functionality, dynamic search, filtering, and dashboards.',
+    tech: ['Angular', 'Highcharts', 'NGX Data Tables'],
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    title: 'PRISM+',
+    description: 'Created CS Risk Management dashboards and admin modules for user management and notifications with search, filtering, and Excel export.',
+    tech: ['Highcharts', 'NGX Data Tables', 'Angular'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    title: 'Smart 2.0 | USMed Equip',
+    description: 'Managed medical equipment logistics interfaces using Vue.js and Kendo UI, with API documentation and testing through Swagger.',
+    tech: ['Vue.js', 'JavaScript', 'HTML', 'CSS', 'Azure DevOps', 'Swagger'],
+    period: "Feb '20 - Mar '22",
+    image: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
+    title: 'MERN Auth System',
+    description: 'Implemented a secure JWT-based authentication system with login, registration, and protected routes. Optimized API response times and MongoDB query performance through indexing and query refactoring.',
+    tech: ['MongoDB', 'Express', 'React', 'Node.js', 'JWT'],
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+  },
+  {
     title: 'Open Retro',
-    description: 'A community-driven retrospective tool for agile teams with engaging UI and collaboration features.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
+    description: 'A learning project built to capture and manage work history details in a structured and user-friendly manner.',
+    tech: ['ReactJS', 'Tailwind CSS', 'Firebase', 'Firestore', 'Realtime Database', 'jsPDF'],
     github: 'https://github.com/lazyraven/open-retro-react',
     live: 'https://www.openretro.in/',
-    highlight: true,
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
   },
-  {
-    title: 'Just Vegan | Todo App',
-    description: 'A clean marketplace experience for plant-based products, optimized for mobile and conversions.',
-    tech: ['React', 'Firebase', 'Stripe'],
-    github: 'https://github.com/lazyraven/react-todo-app-cursor/',
-    live: 'https://lazyraven.github.io/react-todo-app-cursor/',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
-  },
-  {
-    title: 'MERN Auth',
-    description: 'A full-stack authentication starter with JWT sessions, protected routes, and reusable components.',
-    tech: ['MongoDB', 'Express', 'React', 'Node.js'],
-    github: 'https://github.com/lazyraven/mern-ai-features',
-    live: 'https://fullstack-interview-roadmap.netlify.app/',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-  },
 ];
-
-// export type BlogPost = {
-//   id: string;
-//   title: string;
-//   excerpt: string;
-//   content: string;
-//   date: string;
-//   author: string;
-//   tags: string[];
-//   readTime: number;
-// };
 
 export const blogPosts: BlogPost[] = [
   {

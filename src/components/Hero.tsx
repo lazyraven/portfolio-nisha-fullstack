@@ -1,6 +1,7 @@
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
 
-const typingPhrases = ['React + Node.js', 'MERN applications', 'SaaS product experiences'];
+// const typingPhrases = ['React + Node.js', 'MERN applications', 'SaaS product experiences'];
+const typingPhrases = ['Angular enterprise apps', 'Vue.js modules', 'React learning projects'];
 
 export default function Hero() {
   return (
@@ -19,12 +20,17 @@ export default function Hero() {
                 Nisha Yadav
               </h1>
               <p className="max-w-xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-indigo-500 to-pink-500 sm:text-4xl dark:from-cyan-300 dark:via-purple-300 dark:to-pink-300">
-                Building modern web products with premium polish.
+                Building responsive web applications with Angular, Vue.js, JavaScript, TypeScript, and full-stack delivery practices.
               </p>
             </div>
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-              Crafting scalable, performant SaaS applications with strong UX, clean architecture, and fast delivery.
+              Experienced Front-End Developer with 5+ years of expertise in UI/UX optimization, unit testing, Agile delivery, CI/CD, and version control.
             </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-700 dark:text-slate-300">
+              <span className="rounded-full border border-slate-200/70 bg-white/80 px-3 py-2 dark:border-white/10 dark:bg-slate-900/70">5+ years experience</span>
+              <span className="rounded-full border border-slate-200/70 bg-white/80 px-3 py-2 dark:border-white/10 dark:bg-slate-900/70">B. Tech - RTU Kota</span>
+              <span className="rounded-full border border-slate-200/70 bg-white/80 px-3 py-2 dark:border-white/10 dark:bg-slate-900/70">Angular - Vue.js - React</span>
+            </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="#projects" className="btn-primary inline-flex items-center gap-2">
                 View Projects <FiArrowRight />
@@ -44,14 +50,14 @@ export default function Hero() {
           </div>
           <div className="space-y-6">
             <div className="card-glass p-7">
-              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Design</p>
-              <h2 className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white">Glassmorphism with motion-ready polish.</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400">A modern portfolio aesthetic featuring soft gradients, blurred depth, and interactive cards.</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Frontend</p>
+              <h2 className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white">Enterprise UI with reusable components.</h2>
+              <p className="mt-3 text-slate-600 dark:text-slate-400">Hands-on Angular Material work across mat-select, mat-dialog, mat-table, mat-paginator, and dynamic responsive interfaces.</p>
             </div>
             <div className="card-glass p-7">
-              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Scale</p>
-              <h2 className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white">Reliable frontend and backend systems.</h2>
-              <p className="mt-3 text-slate-600 dark:text-slate-400">Built for performance with React, Node.js, and scalable data flows.</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-cyan-300">Delivery</p>
+              <h2 className="mt-4 text-2xl font-semibold text-slate-950 dark:text-white">Tested, agile, CI/CD-aware product work.</h2>
+              <p className="mt-3 text-slate-600 dark:text-slate-400">Experience with Karma, Jasmine, Jenkins, Git/GitLab, Rally, Swagger, and Azure DevOps.</p>
             </div>
           </div>
         </div>

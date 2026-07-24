@@ -45,27 +45,27 @@ export default function Contact() {
         <div className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Contact</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl dark:text-white">
-            Let’s connect and build something exceptional.
+            Contact details from my resume.
           </h2>
         </div>
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-6 rounded-[2rem] border border-slate-200/70 bg-white/90 p-8 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-slate-950/80 dark:shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)]">
             <div>
               <p className="text-sm uppercase tracking-[0.24em] text-cyan-300">Reach out</p>
-              <h3 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white">Let’s build your next product.</h3>
+              <h3 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white">Connect with Nisha Yadav.</h3>
             </div>
             <div className="space-y-4 text-slate-700 dark:text-slate-300">
               <p>
                 Email: <span className="font-semibold text-slate-950 dark:text-white">nishayadav1703@gmail.com</span>
               </p>
-              {/* <p>
-                Phone: <span className="font-semibold text-slate-950 dark:text-white">+1 (555) 123-4567</span>
-              </p> */}
               <p>
-                LinkedIn:{' '}
-                <a href="#" className="text-cyan-600 transition hover:text-cyan-500 dark:text-cyan-300 dark:hover:text-cyan-200">
+                Phone: <span className="font-semibold text-slate-950 dark:text-white">+91-</span>
+              </p>
+              <p>
+                LinkedIn: <span className="font-semibold text-slate-950 dark:text-white">
+               <a href="https://www.linkedin.com/in/nishayadav1703/" className="text-cyan-600 transition hover:text-cyan-500 dark:text-cyan-300 dark:hover:text-cyan-200" target="_blank" rel="noopener noreferrer">
                   linkedin.com/in/nishayadav
-                </a>
+                </a></span>
               </p>
             </div>
             <div className="grid gap-4 rounded-[1.75rem] bg-slate-100/90 p-6 dark:bg-slate-900/80">
@@ -89,7 +89,7 @@ export default function Contact() {
               <p className="text-sm uppercase tracking-[0.28em] text-cyan-300">Message</p>
               <h3 className="text-2xl font-semibold text-slate-950 dark:text-white">Send me a note</h3>
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                Share your project details and I’ll respond as soon as possible.
+                Share your message and I will respond as soon as possible.
               </p>
             </div>
             <label className="block">

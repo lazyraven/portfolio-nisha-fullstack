@@ -63,7 +63,7 @@ export default function Experience() {
         <div className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Experience</p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl dark:text-white">
-            Timeline of senior product delivery.
+            Experience shaped by enterprise delivery, frontend execution, and full-stack support.
           </h2>
         </div>
         <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/90 p-8 shadow-[0_35px_80px_-40px_rgba(15,23,42,0.08)] dark:border-white/10 dark:bg-slate-950/75 dark:shadow-[0_35px_80px_-40px_rgba(0,0,0,0.8)]">
