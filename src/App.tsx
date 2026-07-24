@@ -35,16 +35,18 @@ function App() {
   }, [darkMode]);
 
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} />
-    //     <Route path="/roadmaps" element={<Roadmaps />} />
-    //     <Route path="/roadmaps/iframe/:skillName" element={<RoadmapIframe />} />
-    //     <Route path="/roadmap/:skillName" element={<RoadmapDetail />} />
-    //     <Route path="/blog" element={<Blog />} />
-    //     <Route path="/blog/:id" element={<BlogPost />} />
-    //   </Routes>
-    // </Router>
+    <>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        {/* <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} /> */}
+        <Route path="/roadmaps" element={<Roadmaps />} />
+        <Route path="/roadmaps/iframe/:skillName" element={<RoadmapIframe />} />
+        <Route path="/roadmap/:skillName" element={<RoadmapDetail />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+      </Routes>
+    </Router>
     <div className={darkMode ? 'dark' : ''}>
       <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
         <div className="pointer-events-none absolute inset-0 -z-10">
@@ -151,6 +153,7 @@ function App() {
         <Footer />
       </div>
     </div>
+    </>
   );
 }
 

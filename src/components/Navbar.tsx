@@ -11,8 +11,8 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-6 z-50 px-4">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200/70 bg-white/90 px-5 py-4 text-slate-950 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl transition dark:border-white/10 dark:bg-slate-950/80 dark:text-white dark:shadow-slate-950/40">
+    <header className="fixed w-full top-0 z-50 px-4">
+      <div className="mx-auto top-30 flex max-w-7xl items-center justify-between rounded-full border border-slate-200/70 bg-white/90 px-5 py-4 text-slate-950 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl transition dark:border-white/10 dark:bg-slate-950/80 dark:text-white dark:shadow-slate-950/40">
         <a href="#home" className="text-lg font-semibold tracking-tight text-slate-950 dark:text-white">
           Nisha Yadav
         </a>
