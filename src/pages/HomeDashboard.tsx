@@ -11,6 +11,7 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 // import Footer from '../components/Footer';
+import ProfileSnapshot from '../components/ProfileSnapshot'
 
 export default function HomeDashboard({ darkMode, setDarkMode }: any) {
 
@@ -42,6 +43,7 @@ export default function HomeDashboard({ darkMode, setDarkMode }: any) {
              {/* <Blog /> */}
              {/* <BlogPost /> */}
              <Experience />
+             <ProfileSnapshot/>
              <Projects />
              <Contact />
            </motion.div>
