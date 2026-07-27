@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiMoon, FiSun, FiMenu, FiX } from 'react-icons/fi';
 import { navLinks } from '../data';
-
+import { Link } from 'react-router-dom';
 interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (value: boolean) => void;
@@ -9,6 +9,7 @@ interface NavbarProps {
 
 export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+const isInternalRoute = (href: string) => href.startsWith('/');
 
   return (
     <header className="fixed w-full top-0 z-50 px-4">
@@ -18,14 +19,36 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a 
-              key={link.href} 
-              href={link.href} 
+            // this condition add for resume download
+            link.download ? (<a
+              key={link.href}
+              href={link.href}
               download={link.download}
               className="text-sm text-slate-700 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
             >
               {link.title}
-            </a>
+            </a>) :
+            // this condition add for move to the route
+            isInternalRoute(link.href) ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  download={link.download}
+                  className="text-sm text-slate-700 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                >
+                  {link.title}
+                </Link>
+              ) : (
+            // this condition add for same page move to the particular section
+                <a
+                  key={link.href}
+                  href={link.href}
+                  download={link.download}
+                  className="text-sm text-slate-700 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                >
+                  {link.title}
+                </a>
+            )
           ))}
           <button
             type="button"
